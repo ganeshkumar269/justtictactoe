@@ -98,22 +98,35 @@ function isClicked(cell,rowindex){
 	 else
 	 	return;
 	 if(gameOver()){
-	  	alert("Player Wins");
-		location.reload(); 	
+	  	setTimeout(function(){
+	  		alert("Player Wins");
+			location.reload();
+			},300); 	
 	 }
+	 if(isEmpty())
+	 	setTimeout(function(){
+	  		alert("Tie!");
+			location.reload();
+			},300);
+
 	 else{
-		 if(!isEmpty()){
-			 var cpu = returnOptimal();
-			 if(clickable[cpu] === 0){
-			  	clickable[cpu] = 1;
-			  	arr[cpu].style.backgroundColor = "#c0392b";	
-			 }	
+		var cpu = returnOptimal();
+		if(clickable[cpu] === 0){
+		  	clickable[cpu] = 1;
+		  	arr[cpu].style.backgroundColor = "#c0392b";	
 		}
 		if(gameOver()){
-			alert("CPU wins");
+			setTimeout(function(){
+	  		alert("CPU wins");
 			location.reload();
+			},300);
 		}
 	}
+	if(isEmpty())
+	 	setTimeout(function(){
+	  		alert("Tie!");
+			location.reload();
+			},300);
 }
 
 
