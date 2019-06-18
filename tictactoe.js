@@ -2,7 +2,7 @@ var arr = [] ; // = document.querySelectorAll("td");
 var row1 = document.querySelector("#row1");
 var row2 = document.querySelector("#row2");
 var row3 = document.querySelector("#row3");
-
+var context = document.querySelector('h2');
 
 for (var i = 0; i< 3 ; i++){
 	arr[i]   = row1.cells[i];
@@ -16,6 +16,13 @@ var clickable = [];
 for( var i = 0; i< 9 ; i++)
 	clickable[i] = 0;
 
+function reset(){
+	for( var i = 0; i< 9 ; i++){
+		clickable[i] = 0;
+		arr[i].style.backgroundColor = "#232323";
+	}
+
+}
 function isEmpty(){
 	for(var i = 0;i < 9 ;i++)
 		if(clickable[i] === 0)
@@ -98,17 +105,16 @@ function isClicked(cell,rowindex){
 	 else
 	 	return;
 	 if(gameOver()){
-	  	setTimeout(function(){
-	  		alert("Player Wins");
-			location.reload();
-			},300); 	
+		setTimeout(function(){},300);  
+		context.style.color = "#27ae60";
+		context.textContent = "Player Wins";
+		reset(); 	
 	 }
-	 if(isEmpty())
-	 	setTimeout(function(){
-	  		alert("Tie!");
-			location.reload();
-			},300);
-
+	 else if(isEmpty()){
+		setTimeout(function(){},300);
+		context.textContent = "Tie!";
+		reset();
+	 }	
 	 else{
 		var cpu = returnOptimal();
 		if(clickable[cpu] === 0){
@@ -116,17 +122,17 @@ function isClicked(cell,rowindex){
 		  	arr[cpu].style.backgroundColor = "#c0392b";	
 		}
 		if(gameOver()){
-			setTimeout(function(){
-	  		alert("CPU wins");
-			location.reload();
-			},300);
+			setTimeout(function(){},300);  
+			context.style.color = "#c0392b";
+			context.textContent = "CPU wins"  
+			reset();
+		}
+		else if(isEmpty()){
+			setTimeout(function(){},300);
+			context.textContent = "Tie!";
+			reset();
 		}
 	}
-	if(isEmpty())
-	 	setTimeout(function(){
-	  		alert("Tie!");
-			location.reload();
-			},300);
 }
 
 

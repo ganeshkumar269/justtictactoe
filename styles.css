@@ -1,11 +1,17 @@
 body {
-	background-color: darkgrey;
+	background-color: #232323;
+	text-align: center;
 }
 h1 {
 	color:#356bbf;
 	font-size: 50px;
 	text-align:center; 
 	font-family: sans-serif;
+}
+h2 {
+	color:#356bbf;
+	font-family: sans-serif;
+	font-size: 30px;
 }
 table{
 	margin:10% auto;
@@ -14,26 +20,26 @@ table{
 #row1 .c1{
 	width:4em;
 	height:3.5em;
-	border-right: 2px solid black;
-	border-bottom: 2px solid black;
+	border-right: 2px solid #356bbf;
+	border-bottom: 2px solid #356bbf;
 }
 
 #row1 .c2{
 	width:4em;
 	height:3.5em;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #356bbf;
 }
 
 #row1 .c3{
 	width:4em;
 	height:3.5em;
-	border-left: 2px solid black;
-	border-bottom: 2px solid black;
+	border-left: 2px solid #356bbf;
+	border-bottom: 2px solid #356bbf;
 }
 #row2 .c1{
 	width:4em;
 	height:3.5em;
-	border-right: 2px solid black;
+	border-right: 2px solid #356bbf;
 }
 
 #row2 .c2{
@@ -44,26 +50,26 @@ table{
 #row2 .c3{
 	width:4em;
 	height:3.5em;
-	border-left: 2px solid black;
+	border-left: 2px solid #356bbf;
 }
 #row3 .c1{
 	width:4em;
 	height:3.5em;
-	border-right: 2px solid black;
-	border-top: 2px solid black;
+	border-right: 2px solid #356bbf;
+	border-top: 2px solid #356bbf;
 }
 
 #row3 .c2{
 	width:4em;
 	height:3.5em;
-	border-top: 2px solid black;
+	border-top: 2px solid #356bbf;
 }
 
 #row3 .c3{
 	width:4em;
 	height:3.5em;
-	border-left: 2px solid black;
-	border-top: 2px solid black;
+	border-left: 2px solid #356bbf;
+	border-top: 2px solid #356bbf;
 }
 tr td:hover{
 	background-color:powderblue;
